@@ -8,7 +8,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: 'Users'
+  }
+}
 </script>
 <style scoped>
   .child{
