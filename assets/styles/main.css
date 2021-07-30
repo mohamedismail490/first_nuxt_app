@@ -1,9 +1,11 @@
 body{
   background-color: #c3e0e0;
 }
+
+/* noinspection CssUnknownTarget */
 .jumbotron{
   border-radius: 0;
-  background-image: url("https://cdn.pixabay.com/photo/2014/02/28/16/45/mountains-276995__480.jpg");
+  background-image: url("/mountains.jpg");
   height: 300px;
   background-size: cover;
 }

@@ -19,7 +19,7 @@ export default {
     // return {post: data}
     return await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
       .then((res) => {
-        return {post: res.data}
+        return {post: res.data ?? res}
       })
       .catch(() => {
         return error({ statusCode: 404, message: 'Post not found!' })
