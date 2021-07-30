@@ -5,7 +5,11 @@
     <br>
     <div v-if="allPosts.length > 0" class="row">
 <!--        <Card v-for="post in posts" :key="post.id" :post="post" class="col-md-3" />-->
-        <Card v-for="post in allPosts" :key="post.id" :post="post" class="col-md-3" />
+      <Card v-for="post in allPosts" :key="post.id" :post="post" class="col-md-3" />
+      <div class="col-md-12" dir="rtl">
+        <button v-scroll-to="'body'" class="btn btn-primary col-md-1" >Back to Top</button>
+        <br><br>
+      </div>
     </div>
     <div v-else>
       <h4 class="text-center text-danger">No Posts Found!!!</h4>
@@ -35,6 +39,8 @@ export default {
   // OR
 
     // async asyncData({error,store}) {
+
+  // Defined in vuex store actions
   async fetch({error,store}) { // Fetch only works with Vuex Store
     return await axios.get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
@@ -45,6 +51,8 @@ export default {
         return error({ statusCode: 404, message: 'No Posts Found!!!' })
       });
   },
+
+
   // data() {
   //   return {
   //      posts: []
